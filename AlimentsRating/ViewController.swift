@@ -9,11 +9,12 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
+    @IBOutlet weak var AlimentNameTextField: UITextField?
+    @IBOutlet weak var HappinessTextField: UITextField?
+    
+    
+    @IBAction func Add(_ sender: Any) {
+        guard let AlimentName = Alimen
     }
-
-
 }
 

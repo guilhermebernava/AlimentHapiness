@@ -9,21 +9,21 @@
 /* Begin PBXBuildFile section */
 		54F10804285B8D1500085579 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F10803285B8D1500085579 /* AppDelegate.swift */; };
 		54F10806285B8D1500085579 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F10805285B8D1500085579 /* SceneDelegate.swift */; };
-		54F10808285B8D1500085579 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F10807285B8D1500085579 /* ViewController.swift */; };
 		54F1080B285B8D1500085579 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 54F10809285B8D1500085579 /* Main.storyboard */; };
 		54F1080D285B8D1500085579 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 54F1080C285B8D1500085579 /* Assets.xcassets */; };
 		54F10810285B8D1500085579 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 54F1080E285B8D1500085579 /* LaunchScreen.storyboard */; };
+		54F10818285B922A00085579 /* TableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F10817285B922A00085579 /* TableController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		54F10800285B8D1500085579 /* AlimentsRating.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AlimentsRating.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		54F10803285B8D1500085579 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		54F10805285B8D1500085579 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		54F10807285B8D1500085579 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		54F1080A285B8D1500085579 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		54F1080C285B8D1500085579 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		54F1080F285B8D1500085579 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		54F10811285B8D1500085579 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		54F10817285B922A00085579 /* TableController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +56,31 @@
 		54F10802285B8D1500085579 /* AlimentsRating */ = {
 			isa = PBXGroup;
 			children = (
+				54F1081A285B927300085579 /* Views */,
+				54F10819285B926C00085579 /* Controllers */,
 				54F10803285B8D1500085579 /* AppDelegate.swift */,
 				54F10805285B8D1500085579 /* SceneDelegate.swift */,
-				54F10807285B8D1500085579 /* ViewController.swift */,
-				54F10809285B8D1500085579 /* Main.storyboard */,
 				54F1080C285B8D1500085579 /* Assets.xcassets */,
 				54F1080E285B8D1500085579 /* LaunchScreen.storyboard */,
 				54F10811285B8D1500085579 /* Info.plist */,
 			);
 			path = AlimentsRating;
+			sourceTree = "<group>";
+		};
+		54F10819285B926C00085579 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				54F10817285B922A00085579 /* TableController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		54F1081A285B927300085579 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				54F10809285B8D1500085579 /* Main.storyboard */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,7 +154,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				54F10808285B8D1500085579 /* ViewController.swift in Sources */,
+				54F10818285B922A00085579 /* TableController.swift in Sources */,
 				54F10804285B8D1500085579 /* AppDelegate.swift in Sources */,
 				54F10806285B8D1500085579 /* SceneDelegate.swift in Sources */,
 			);
@@ -285,6 +301,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = PY765YTKSF;
@@ -302,6 +319,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.bernava.AlimentsRating;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -313,6 +331,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = PY765YTKSF;
@@ -330,6 +349,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.bernava.AlimentsRating;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
