@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		540F64DA286CA62E00CA593C /* Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 540F64D9286CA62E00CA593C /* Alerts.swift */; };
+		540F64DC286CE14A00CA593C /* Table.swift in Sources */ = {isa = PBXBuildFile; fileRef = 540F64DB286CE14A00CA593C /* Table.swift */; };
+		540F64E1286DD99100CA593C /* AlimentDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 540F64E0286DD99100CA593C /* AlimentDao.swift */; };
+		540F64E3286DD9A400CA593C /* IngridientDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 540F64E2286DD9A400CA593C /* IngridientDao.swift */; };
+		540F64E5286DE2BF00CA593C /* Entity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 540F64E4286DE2BF00CA593C /* Entity.swift */; };
 		54191D5B285B9D10007CBFFC /* AlimentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54191D5A285B9D10007CBFFC /* AlimentController.swift */; };
 		54191D5E285B9E4A007CBFFC /* Aliment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54191D5D285B9E4A007CBFFC /* Aliment.swift */; };
 		54595D6728636137009A5D18 /* Ingridient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54595D6628636137009A5D18 /* Ingridient.swift */; };
@@ -21,6 +26,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		540F64D9286CA62E00CA593C /* Alerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alerts.swift; sourceTree = "<group>"; };
+		540F64DB286CE14A00CA593C /* Table.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Table.swift; sourceTree = "<group>"; };
+		540F64E0286DD99100CA593C /* AlimentDao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlimentDao.swift; sourceTree = "<group>"; };
+		540F64E2286DD9A400CA593C /* IngridientDao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngridientDao.swift; sourceTree = "<group>"; };
+		540F64E4286DE2BF00CA593C /* Entity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entity.swift; sourceTree = "<group>"; };
 		54191D5A285B9D10007CBFFC /* AlimentController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlimentController.swift; sourceTree = "<group>"; };
 		54191D5D285B9E4A007CBFFC /* Aliment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Aliment.swift; sourceTree = "<group>"; };
 		54595D6628636137009A5D18 /* Ingridient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ingridient.swift; sourceTree = "<group>"; };
@@ -47,11 +57,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		540F64D8286CA61100CA593C /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				540F64D9286CA62E00CA593C /* Alerts.swift */,
+				540F64DB286CE14A00CA593C /* Table.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		540F64DF286DD98200CA593C /* Daos */ = {
+			isa = PBXGroup;
+			children = (
+				540F64E0286DD99100CA593C /* AlimentDao.swift */,
+				540F64E2286DD9A400CA593C /* IngridientDao.swift */,
+			);
+			path = Daos;
+			sourceTree = "<group>";
+		};
 		54191D5C285B9E37007CBFFC /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				54191D5D285B9E4A007CBFFC /* Aliment.swift */,
 				54595D6628636137009A5D18 /* Ingridient.swift */,
+				540F64E4286DE2BF00CA593C /* Entity.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -75,6 +104,8 @@
 		54F10802285B8D1500085579 /* AlimentsRating */ = {
 			isa = PBXGroup;
 			children = (
+				540F64DF286DD98200CA593C /* Daos */,
+				540F64D8286CA61100CA593C /* Services */,
 				54191D5C285B9E37007CBFFC /* Models */,
 				54F1081A285B927300085579 /* Views */,
 				54F10819285B926C00085579 /* Controllers */,
@@ -180,11 +211,16 @@
 			files = (
 				54191D5E285B9E4A007CBFFC /* Aliment.swift in Sources */,
 				54595D6A28636F8F009A5D18 /* AddIngridientViewController.swift in Sources */,
+				540F64DA286CA62E00CA593C /* Alerts.swift in Sources */,
+				540F64DC286CE14A00CA593C /* Table.swift in Sources */,
+				540F64E1286DD99100CA593C /* AlimentDao.swift in Sources */,
 				54191D5B285B9D10007CBFFC /* AlimentController.swift in Sources */,
 				54F10818285B922A00085579 /* TableController.swift in Sources */,
 				54F10804285B8D1500085579 /* AppDelegate.swift in Sources */,
+				540F64E5286DE2BF00CA593C /* Entity.swift in Sources */,
 				54F10806285B8D1500085579 /* SceneDelegate.swift in Sources */,
 				54595D6728636137009A5D18 /* Ingridient.swift in Sources */,
+				540F64E3286DD9A400CA593C /* IngridientDao.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

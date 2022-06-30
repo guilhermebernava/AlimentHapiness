@@ -7,7 +7,21 @@
 
 import UIKit
 
-class Aliment: NSObject {
+class Aliment: NSObject, NSCoding, Entity {
+    
+    //serve para converter a class em Bytes para ser salvo no dispositivo
+    func encode(with coder: NSCoder) {
+        coder.encode(name,forKey: "name")
+        coder.encode(happiness,forKey: "happiness")
+        coder.encode(ingridients,forKey: "ingridients")
+    }
+    
+    required init?(coder: NSCoder) {
+        name = coder.decodeObject(forKey: "name") as! String
+        happiness = coder.decodeObject(forKey: "happiness") as! String
+        ingridients = coder.decodeObject(forKey: "ingridients") as! [Ingridient]
+    }
+    
     let name : String
     let happiness: String
     let ingridients: [Ingridient]
@@ -37,5 +51,19 @@ class Aliment: NSObject {
             break
         }
         self.happiness = finalHappiness
+    }
+    
+    func createMessage() -> String {
+        var message = "Happiness: \(self.happiness) \n Ingredients: \n"
+        
+        if(ingridients.isEmpty){
+            message += "no ingridients for this aliment!"
+            return message
+        }
+
+        for item in self.ingridients {
+            message += "\(item.name) - Kcal \(item.kcal)\n"
+        }
+        return message
     }
 }

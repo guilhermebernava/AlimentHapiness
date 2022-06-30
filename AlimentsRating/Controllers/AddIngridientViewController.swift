@@ -12,11 +12,7 @@ protocol AddIngredientDelegate{
 }
 
 class AddIngridientViewController: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
-
+    
     @IBOutlet weak var NameTextField: UITextField?
     @IBOutlet weak var KcalTextField: UITextField?
     
@@ -37,6 +33,8 @@ class AddIngridientViewController: UIViewController {
         guard let kcalText = KcalTextField?.text else {return}
         guard let kcal = Double(kcalText) else {return}
         
+        //o  ?  serve como if let, se existir o delegate ele irá rodar
+        //caso nn exista ele só vai ignorar.
         delegate?.AddIngredient(Ingridient(name: name, kcal: kcal)) 
         
         navigationController?.popViewController(animated:true)

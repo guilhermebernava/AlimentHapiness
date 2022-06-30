@@ -2,10 +2,12 @@ import SwiftUI
 
 class TableController: UITableViewController , AlimentControllerDelegate{
     //ARRAY com os dados para serem renderizados
-    var aliments = [Aliment(name: "Rice", happiness: 3)]
+    var aliments = [Aliment(name: "Rice and Beens", happiness: 3, ingridients: [Ingridient(name: "Rice", kcal: 56), Ingridient(name: "Beens", kcal: 30)])]
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        guard let savedAliments = AlimentDao.GetAlimentsFromFile() else {return}
+        aliments = savedAliments
     }
     
     //OBRIGADO A IMPLEMENTAR O DATA SOURCE DA TABLE VIEW
@@ -19,12 +21,34 @@ class TableController: UITableViewController , AlimentControllerDelegate{
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell(style: .default, reuseIdentifier: nil)
         cell.textLabel?.text = aliments[indexPath.row].name
+        //cria uma function para ser adicionada na cell
+        let longPress = UILongPressGestureRecognizer(target: self, action: #selector(editAliment))
+        //adiciona a function de clicar dentro da cell
+        cell.addGestureRecognizer(longPress)
         return cell
+    }
+    
+    @objc func editAliment(_ gesture: UILongPressGestureRecognizer){
+        //verifica se o usuario comecou a clicar
+        if gesture.state == .began { 
+            if let cell = GetCellFromGestureView(gesture.view){
+                guard let item = GetItemFromCell(cell, tableView: tableView, list: aliments) else {return}
+                guard let index = GetIndexOfCell(cell, tableView: tableView) else {return}
+                //criando um ALERT
+                let alert = ItemEditAlert(title: item.name, message: item.createMessage(),
+                //closure, para passar os parametros devemos colocar eles antes do IN
+                editHandler: { _ in
+                    self.aliments.remove(at: index)
+                    self.tableView.reloadData()
+                })
+                
+                present(alert, animated: true)
+            }
+        }
     }
     
     //metodo que vai ser rodado antes da troca de TELA
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
         //vai verificar se o segue "a seta que leva até a outra tela"
         //tem esse identificador.
         if(segue.identifier == "create"){
@@ -39,6 +63,7 @@ class TableController: UITableViewController , AlimentControllerDelegate{
     //o _ serve para ocultar o nome dos parametros quando o metodo for chamado.
     func Add(_ Aliment: Aliment){
         aliments.append(Aliment)
+        AlimentDao.SaveAlimentsInFile(aliments)
         //atualiza os dados na tela
         tableView.reloadData()
     }
